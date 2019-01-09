@@ -17,10 +17,6 @@ html > * {
   background-color: lightgrey;
 }
 
-/* body > * {
-  max-width: 940px;
-} */
-
 body {
   overflow-x: hidden;
 }
@@ -156,7 +152,6 @@ main {
   color: #8f8f8f;
   font-size: 12px;
   font-weight: 400;
-  /* margin-left: 35px; */
   text-decoration: none;
   text-transform: capitalize;
 }
@@ -271,7 +266,8 @@ main {
   box-shadow: 0px 1px 0px 0px #d3d3d3;
 }
 
-#tabs > div > div {
+#tabs > div > div,
+.looking .triangle + div {
   position: absolute;
   top: 200px;
   left: 0;
@@ -283,7 +279,9 @@ main {
   flex-direction: column;
   margin: 25px 55px 0 30px;
 }
-#tabs > div > div > span:nth-child(2) {
+
+#tabs > div > div > span:nth-child(2),
+.looking .triangle + div > span:nth-child(2) {
   font-family: Arial;
   color: #646464;
   font-size: 12px;
@@ -291,7 +289,18 @@ main {
   margin-top: 25px;
 }
 
-#tabs > div .triangle {
+#content .triangle + div {
+  top: 300px;
+  color: #ffffff;
+}
+
+#content .triangle + div > span:nth-child(2) {
+  color: #ffffff;
+  line-height: 24px;
+}
+
+#tabs > div .triangle,
+.triangle {
   content: "";
   position: absolute;
   left: 220px;
@@ -311,9 +320,11 @@ main {
   opacity: 0.5;
   cursor: pointer;
 }
+
 .close:hover {
   opacity: 1;
 }
+
 .close:before,
 .close:after {
   position: absolute;
@@ -323,6 +334,7 @@ main {
   width: 2px;
   background-color: #ffffff;
 }
+
 .close:before {
   transform: rotate(90deg);
 }
@@ -375,6 +387,20 @@ main {
 #content > div:first-child > div.comment > div:nth-child(2) {
   height: 170px;
   padding-right: 40px;
+}
+
+.comment > div {
+  box-shadow: 0px 1px 1px 0px #000000;
+}
+
+.readmore i {
+  color: #bdbdbd;
+}
+
+#content > div:first-child > div.readmore > span:hover,
+#content > div:first-child > div.readmore > span:hover + i,
+#content > div:first-child > div.readmore > span + i:hover {
+  color: #f26c4f;
 }
 
 #content > div:first-child > div > div:nth-child(3) {
@@ -497,6 +523,7 @@ div.up > h2 {
   font-size: 30px;
   font-weight: 700;
 }
+
 div.up > p {
   font-family: Arial;
   color: #707070;
@@ -570,7 +597,6 @@ div.bottom > p > i {
   height: 480px;
   background-color: #ffffff;
   box-shadow: 0px 1px 1px 0px #000000;
-  /* position: relative; */
 }
 
 #content div.textbox > div:last-child > * {
@@ -597,7 +623,142 @@ div.bottom > p > i {
   margin-top: 50px;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.right > .looking {
+  height: 580px;
+  background-color: #373737;
+  box-shadow: 0px 1px 0px 0px #d3d3d3;
+  position: relative;
+}
+
+.news {
+  height: 215px;
+  font-family: Arial;
+  color: #a7a7a7;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #000000;
+  box-shadow: 0px 1px 0px 0px #ffffff;
+}
+
+.news:last-child {
+  border: none;
+  box-shadow: none;
+}
+
+.news > * {
+  margin: 0;
+}
+
+.news h4 {
+  color: #474747;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.19px;
+  margin-top: 35px;
+}
+
+.news p {
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.news span {
+  font-weight: 400;
+  letter-spacing: 0.12px;
+  margin-bottom: 20px;
+}
+
+.rMenu {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial;
+}
+
+.rMenu > div {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 1px 0px #000000;
+  height: 45px;
+  display: flex;
+  border-left: 3px solid #cacaca;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.rMenu > div a {
+  text-decoration: none;
+  color: #474747;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.16px;
+  margin: 0 15px;
+}
+
+.rMenu > div span {
+  color: #a7a7a7;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.rMenu > div:hover {
+  background-color: #f26c4f;
+  border-left: 3px solid #ce4e32;
+}
+
+.rMenu > div:hover a,
+.rMenu > div:hover span {
+  color: #fafafa;
+}
+
 footer {
   background-color: #373737;
   height: 140px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer div {
+  width: 950px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+.links a {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.links a:hover {
+  color: #ce4e32;
+}
+
+footer div p {
+  font-family: Arial;
+  color: #7e7e7e;
+  font-size: 11px;
+  font-weight: 400;
+  width: 770px;
+}
+
+footer div:first-child {
+  margin-top: 35px;
+}
+
+footer div:last-child {
+  margin-top: 15px;
 }
