@@ -259,7 +259,20 @@ main {
 #tabs > div {
   width: 300px;
   background-color: #ffffff;
-  position: relative;
+  /* position: relative; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("./img/Layer6.png");
+}
+
+#tabs > div:nth-child(2) {
+  background: url("./img/Layer8.png");
+}
+
+#tabs > div:nth-child(3) {
+  background: url("./img/Layer7.png");
 }
 
 #tabs > div:hover {
@@ -267,8 +280,8 @@ main {
 }
 
 #tabs > div > div,
-.looking .triangle + div {
-  position: absolute;
+.looking > div + div {
+  /* position: absolute; */
   top: 200px;
   left: 0;
   font-family: Arial;
@@ -277,11 +290,11 @@ main {
   font-weight: 700;
   display: flex;
   flex-direction: column;
-  margin: 25px 55px 0 30px;
+  margin: 0px 55px 55px 30px;
 }
 
 #tabs > div > div > span:nth-child(2),
-.looking .triangle + div > span:nth-child(2) {
+.looking > div + div > span:nth-child(2) {
   font-family: Arial;
   color: #646464;
   font-size: 12px;
@@ -289,12 +302,12 @@ main {
   margin-top: 25px;
 }
 
-#content .triangle + div {
+#content .looking > div + div {
   top: 300px;
   color: #ffffff;
 }
 
-#content .triangle + div > span:nth-child(2) {
+#content .looking > div + div > span:nth-child(2) {
   color: #ffffff;
   line-height: 24px;
 }
@@ -302,13 +315,24 @@ main {
 #tabs > div .triangle,
 .triangle {
   content: "";
-  position: absolute;
-  left: 220px;
+  /* position: absolute; */
+  /* left: 220px;
   top: 0;
-  bottom: 20px;
+  bottom: 20px; */
+
   border-top: 80px solid #f26c4f;
   border-left: 80px solid transparent;
-  margin: 0 auto;
+  margin: 0;
+  display: flex;
+  position: relative;
+}
+
+#tabs > div > div:nth-child(1) {
+  /* visibility: hidden; */
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .close {
@@ -570,14 +594,17 @@ div.bottom > p > i {
   height: 610px;
   background-color: #ffffff;
   box-shadow: 0px 1px 1px 0px #000000;
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  align-items: flex-end;
+  background: url("./img/Layer\ 13.png");
 }
 
 #content div.textbox > div:first-child > div {
-  position: absolute;
+  /* position: absolute; */
   top: 350px;
   left: 0;
-  padding: 0 50px;
+  padding: 0 50px 45px 50px;
 }
 
 #content div.textbox > div:first-child > div > h3 {
@@ -632,7 +659,17 @@ div.bottom > p > i {
   height: 580px;
   background-color: #373737;
   box-shadow: 0px 1px 0px 0px #d3d3d3;
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("./img/Layer\ 9.png");
+}
+
+.looking > div:first-child {
+  /* visibility: hidden; */
+  display: flex;
+  justify-content: flex-end;
 }
 
 .news {
